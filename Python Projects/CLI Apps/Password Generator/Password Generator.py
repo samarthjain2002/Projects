@@ -31,6 +31,21 @@ def save_history(password):
         file.write(password + "\n")
 
 
+def check_password_strength(password):
+    length_criteria = len(password) >= 12
+    uppercase_criteria = any(char.isupper() for char in password)
+    lowercase_criteria = any(char.islower() for char in password)
+    digit_criteria = any(char.isdigit() for char in password)
+    special_char_criteria = any(char in string.punctuation for char in password)
+
+    if all([length_criteria, uppercase_criteria, lowercase_criteria, digit_criteria, special_char_criteria]):
+        print("The password strength is strong")
+    elif all([length_criteria, uppercase_criteria or lowercase_criteria, digit_criteria]):
+        print("The password strength is medium")
+    else:
+        print("The password strength is weak")
+ 
+
 def main():
     history = load_history()
     
@@ -58,7 +73,8 @@ def main():
             print("\nMenu:")
             print("1. Generate Password")
             print("2. View Password History")
-            print("3. Exit")
+            print("3. Check Password Strength")
+            print("4. Exit")
             
             choice = int(input("Enter your choice: "))
             match choice:
@@ -77,6 +93,10 @@ def main():
                     else:
                         print("No passwords generated")
                 case 3:
+                    password = input("Enter the password to be checked: ").strip()
+                    check_password_strength(password)
+                case 4:
+                    print("Exiting...")
                     exit()
                 case _:
                     print("Invalid choice")
