@@ -18,7 +18,7 @@ def height():
     elif med == 3:
         h = float(input("Enter the height in feet\t"))
         cm = h * 30.48
-    if med == 4:
+    elif med == 4:
         ft, inches = map(float, input("Enter the height in feet and inches\t").split())
         cm = (ft * 30.48) + (inches * 2.54)
     else:
