@@ -2,6 +2,7 @@ import argparse
 import csv
 from datetime import datetime
 from tabulate import tabulate
+import matplotlib.pyplot as plt
 
 
 DATA_FILE = "budget_data.csv"
@@ -22,16 +23,48 @@ def view():
                 print(tabulate(transactions, headers = ["DATE & TIME", "AMOUNT", "TYPE", "CATEGORY", "DESCRIPTION"], tablefmt = "grid"))
             else:
                 print("No transactions found.")
-    except FileNotFoundError as e:
+    except FileNotFoundError:
         print("No transactions found. Start by adding one.")
 
 
 def summary():
-    pass
+    try:
+        with open(DATA_FILE, mode = 'r') as file:
+            reader = csv.reader(file)
+            total_income = total_expenses = 0
+            for row in reader:
+                amount = float(row[1])
+                if row[2] == "income":
+                    total_income += amount
+                else:
+                    total_expenses += amount
+            balance = total_income - total_expenses
+            print(f"Total income: {total_income}")
+            print(f"Total expenses: {total_expenses}")
+            print(f"Balance: {balance}")
+    except FileNotFoundError:
+        print("No transactions found. Start by adding one.")
 
 
 def visualize():
-    pass
+    try:
+        with open(DATA_FILE, mode = 'r') as file:
+            reader = csv.reader(file)
+            category_totals = {}
+            for row in reader:
+                amount = float(row[1])
+                if row[2] == "expense":
+                    category_totals[row[3]] = category_totals.get(row[3], 0) + amount
+            
+            if category_totals:
+                plt.figure(figsize = (8, 6))
+                plt.pie(category_totals.values(), labels = category_totals.keys(), autopct = "%1.1f%%", startangle = 140)
+                plt.title("Spending by category")
+                plt.show()
+            else:
+                print("No expenses data found for visualization")
+    except FileNotFoundError:
+        print("o transactions found. Start by adding one.")
 
 
 def main():
@@ -46,7 +79,7 @@ def main():
 
     view_parser = sub_parsers.add_parser("view", help = "View the transactions")
 
-    summary_parser = sub_parsers.add_parser("summary", help = "Give summary of transactions")
+    summary_parser = sub_parsers.add_parser("summarize", help = "Give summary of transactions")
 
     visualize_parser = sub_parsers.add_parser("visualize", help = "Visualize the transactions")
 
