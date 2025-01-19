@@ -13,15 +13,15 @@ class TestMinHeap(unittest.TestCase):
 
     def test_insert_and_extract_min(self):
         """Test inserting elements and extracting the minimum element."""
-        self.min_heap.insert(10)
-        self.min_heap.insert(5)
-        self.min_heap.insert(15)
+        self.min_heap.heappush(10)
+        self.min_heap.heappush(5)
+        self.min_heap.heappush(15)
         
         # Extract the minimum, which should be 5
-        self.assertEqual(self.min_heap.extract_min(), 5)
+        self.assertEqual(self.min_heap.heappop(), 5)
         
         # The next minimum should be 10
-        self.assertEqual(self.min_heap.extract_min(), 10)
+        self.assertEqual(self.min_heap.heappop(), 10)
 
     def test_heapify(self):
         """Test if heapify works correctly."""
@@ -29,13 +29,13 @@ class TestMinHeap(unittest.TestCase):
         self.min_heap.heapify(elements)
         
         # After heapifying, the smallest element should be at the root
-        self.assertEqual(self.min_heap.extract_min(), 5)
+        self.assertEqual(self.min_heap.heappop(), 5)
 
     def test_peek(self):
         """Test peeking the minimum element without extracting it."""
-        self.min_heap.insert(10)
-        self.min_heap.insert(5)
-        self.assertEqual(self.min_heap.peek(), 5)
+        self.min_heap.heappush(10)
+        self.min_heap.heappush(5)
+        self.assertEqual(self.min_heap.heappeek(), 5)
 
 if __name__ == '__main__':
     unittest.main()
