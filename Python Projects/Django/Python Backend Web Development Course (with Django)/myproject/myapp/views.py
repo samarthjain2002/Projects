@@ -75,3 +75,10 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
+
+def blog(request):
+    posts = [1, 2, 3, 4, "tomi", "john", "tim", 5]
+    return render(request, "blog.html", {"posts": posts})
