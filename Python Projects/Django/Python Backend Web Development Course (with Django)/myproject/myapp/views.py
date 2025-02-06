@@ -8,6 +8,7 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
+    """
     feature1 = Feature()
     feature1.id, feature1.name, feature1.details, feature1.is_true = 1, "Fast", "Our service is very quick and responsive", True
     feature2 = Feature()
@@ -18,6 +19,7 @@ def index(request):
     feature4.id, feature4.name, feature4.details, feature4.is_true = 1, "Affordable", "Our service is very affordable with multiple price ranges", True
 
     features = [feature1, feature2, feature3, feature4]
+    """
 
     features = Feature.objects.all()
 
