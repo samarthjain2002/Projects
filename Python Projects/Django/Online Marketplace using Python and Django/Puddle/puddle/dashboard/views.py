@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 
 from django.contrib.auth.decorators import login_required
 
@@ -15,3 +16,7 @@ def index(request):
         'items': items,
         'categories': categories,
     })
+
+def logout_view(request):
+    logout(request)  # Ends user authentication
+    return redirect('core:index')

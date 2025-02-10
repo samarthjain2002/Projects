@@ -6,17 +6,26 @@ from item.models import Category, Item
 
 from .forms import SignupForm
 
+
 def index(request):
-    items = Item.objects.filter(is_sold = False)
-    categories = Category.objects.all()
+    category_id = request.GET.get('category')  # Get category from query parameters
+    
+    if category_id:
+        items = Item.objects.filter(is_sold=False, category_id=category_id)
+        categories = None  # Don't pass categories
+    else:
+        items = Item.objects.filter(is_sold=False)
+        categories = Category.objects.all()  # Pass categories only when no filter is applied
 
     return render(request, 'core/index.html', {
         'categories': categories,
         'items': items,
     })
 
+
 def contact(request):
     return render(request, 'core/contact.html')
+
 
 def signup(request):
     if request.method == 'POST':
