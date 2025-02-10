@@ -33,6 +33,7 @@ Ensure you have Python installed on your machine. It is recommended to use a vir
    ```
 4. Run database migrations:
    ```sh
+   python manage.py makemigrations
    python manage.py migrate
    ```
 5. Create a superuser:
@@ -59,13 +60,14 @@ Ensure you have Python installed on your machine. It is recommended to use a vir
 ## Project Structure
 ```
 ├── marketplace/
-│   ├── core/            # Main app for authentication and static pages
-│   ├── items/           # Handles item listings
-│   ├── dashboard/       # User dashboard
 │   ├── conversations/   # User messaging system
-│   ├── templates/       # HTML templates
-│   ├── static/          # Static files (CSS, JS, images)
+│   ├── core/            # Main app for authentication and static pages
+│   ├── dashboard/       # User dashboard
+│   ├── env/             # Virtual environment
+│   ├── item/            # Handles item listings
 │   ├── media/           # Uploaded images
+│   ├── puddle/          # Main app
+│   ├── db.sqlite3       # SQL database
 │   ├── manage.py        # Django management script
 └── requirements.txt     # Project dependencies
 ```
