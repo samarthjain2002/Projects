@@ -17,6 +17,8 @@ Projects/
 │   │   ├── Unit Converter/
 │   │   ├── Web Scraping Program/
 │   ├── Django/
+│   │   ├── API-Projects
+│   │   │   ├── Blogging Platform API
 │   │   ├── Blog App/
 │   │   ├── Chat App/
 │   │   ├── Django REST Framework/
@@ -50,6 +52,11 @@ A collection of command-line applications built using Python.
 
 ### Django Projects
 Projects built using Django and Django REST Framework.
+### API-Projects
+- **Blogging Platform API** - A RESTful API for a personal blogging platform.
+  Project URL: https://roadmap.sh/projects/blogging-platform-api
+  
+### Web Apps
 - **Blog App** - A simple blog application with CRUD functionality.
 - **Chat App** - A real-time chat application.
 - **Django REST Framework** - Experiments and APIs built with Django REST Framework.

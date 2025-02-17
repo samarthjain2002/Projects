@@ -1,6 +1,7 @@
 # Number Guessing Game
 
 Project URL: https://roadmap.sh/projects/number-guessing-game
+
 A simple command-line-based Number Guessing Game built with Python. The game randomly selects a number between 1 and 100, and the player must guess the correct number within a limited number of attempts.
 
 ## Features
