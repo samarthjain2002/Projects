@@ -1,0 +1,28 @@
+cURL commands on Windows Command Prompt
+
+1. Register (POST request)
+curl -i -X POST http://127.0.0.1:8000/register -d "name=<your-name>&email=<your-email>&password=<your-password>"
+
+2. Login (POST request)
+curl -i -X POST http://127.0.0.1:8000/login -d "username=USERNAME&password=PASSWORD"
+
+3. Add a Task (POST request)
+curl -i -X POST "http://127.0.0.1:8000/todos/" -H "Authorization: Token <your-token>" -H "Content-Type: application/json" -d "{\"title\": \"<your-title>\", \"description\": \"<your-description>\"}"
+
+4. List All Tasks (GET request)
+curl -i -X GET http://127.0.0.1:8000/todos/ -H "Authorization: Token <your-token>"
+
+5. Put a Task (PUT request)
+curl -i -X PUT http://127.0.0.1:8000/todos/<task-id>/ -H "Authorization: Token <your-token>" -H "Content-Type: application/json" -d "{\"title\": \"<your-title>\", \"description\": \"<your-description>\"}"
+
+6. Delete a Task (DELETE request)
+curl -i -X DELETE http://127.0.0.1:8000/todos/<task-id>/ -H "Authorization: Token <your-token>"
+
+7. Paginate All Tasks (GET request with pagination)
+curl -i -X GET "http://127.0.0.1:8000/todos/?page=1&limit=10" -H "Authorization: Token <your-token>"
+
+8. Reset Token (POST request)
+curl -i -X POST http://127.0.0.1:8000/reset-token -H "Authorization: Token <your-token>"
+
+9. Logout (POST request)
+curl -i -X POST http://127.0.0.1:8000/logout -H "Authorization: Token <your-token>"

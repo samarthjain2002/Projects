@@ -19,6 +19,7 @@ Projects/
 │   ├── Django/
 │   │   ├── API-Projects
 │   │   │   ├── Blogging Platform API
+│   │   │   ├── Todo List API
 │   │   ├── Blog App/
 │   │   ├── Chat App/
 │   │   ├── Django REST Framework/
@@ -55,6 +56,8 @@ Projects built using Django and Django REST Framework.
 ### API-Projects
 - **Blogging Platform API** - A RESTful API for a personal blogging platform.
   Project URL: https://roadmap.sh/projects/blogging-platform-api
+- **Todo List API** - A RESTful API to allow users to manage their to-do list.
+  Project URL: https://roadmap.sh/projects/todo-list-api
   
 ### Web Apps
 - **Blog App** - A simple blog application with CRUD functionality.
