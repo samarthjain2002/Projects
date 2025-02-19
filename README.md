@@ -41,7 +41,7 @@ Projects/
 
 ### CLI Apps
 A collection of command-line applications built using Python.
-- **Budget Tracker** - A CLI app for tracking expenses and income.
+- **Budget Tracker** - A CLI app for tracking expenses and income. Project URL: https://roadmap.sh/projects/expense-tracker
 - **File Organizer** - Organizes files into directories based on extensions.
 - **Number Guessing Game** - A simple game where users guess a randomly generated number.
   Project URL: https://roadmap.sh/projects/number-guessing-game

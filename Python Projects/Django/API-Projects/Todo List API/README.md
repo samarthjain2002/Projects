@@ -157,8 +157,8 @@ curl -X GET "http://127.0.0.1:8000/todos/?page=1&limit=10" \
 
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
-   cd todo-list-api
+   git clone https://github.com/samarthjain2002/Projects.git
+   cd "Python Projects\Django\API-Projects\Todo List API\todolist"
    ```
 
 2. Install dependencies:
