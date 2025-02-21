@@ -20,6 +20,7 @@ Projects/
 │   │   ├── API-Projects
 │   │   │   ├── Blogging Platform API
 │   │   │   ├── Todo List API
+│   │   │   ├── Expense Tracker API
 │   │   ├── Blog App/
 │   │   ├── Chat App/
 │   │   ├── Django REST Framework/
@@ -58,6 +59,8 @@ Projects built using Django and Django REST Framework.
   Project URL: https://roadmap.sh/projects/blogging-platform-api
 - **Todo List API** - A RESTful API to allow users to manage their to-do list.
   Project URL: https://roadmap.sh/projects/todo-list-api
+- **Expense Tracker API** - A RESTful API for managing personal expenses.
+  Project URL: https://roadmap.sh/projects/expense-tracker-api
   
 ### Web Apps
 - **Blog App** - A simple blog application with CRUD functionality.
